@@ -150,16 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const color = textInput.value === textInput.dataset.reponse ? 'lightgreen' : 'lightcoral';
     }
     const score = good/cellInputs.length;
+    
     let appreciation = '';
-    if (score < .4) {
-      appreciation = 'Oups, Trop d\'erreur. Tu peux facilement faire mieux';
-    } else if (score < .7) {
-      appreciation = 'Hum, encore un peu de travail, essaies encore';
-    } else if (score < 1) {
-      appreciation = 'Presque parfait, bravo';
-    } else {
-      appreciation = 'Parfait, tu as fait un sans faute';
-    }
+    if (score < .4)      appreciation = 'Oups, Trop d\'erreur. Tu peux facilement faire mieux';
+    else if (score < .7) appreciation = 'Hum, encore un peu de travail, essaies encore';
+    else if (score < 1)  appreciation = 'Presque parfait, bravo';
+    else                 appreciation = 'Parfait, tu as fait un sans faute';
+   
     document.querySelector('.score').innerHTML = `Ton résultat : ${good}/${cellInputs.length}, ${appreciation}`;
   }
 
