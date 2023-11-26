@@ -1,6 +1,6 @@
 body {
   font-family : 'Helvetica','Arial',sans-serif;
-  color : gray;
+/*  color : gray;*/
 }
 
 table {
@@ -9,9 +9,24 @@ table {
 }
 
 td {
-  border : 1px solid grey;
+/*  border : 1px solid grey;*/
   padding : 10px;
-  background-color : ghostwhite;
+}
+
+tbody tr:nth-child(even) {
+  background-color : rgba(0, 0, 0, 0.02)
+}
+
+tbody tr:nth-child(odd) {
+  background-color : rgba(0, 0, 0, 0.04)
+}
+
+tbody tr {
+  border-bottom: 1px solid #bbb;
+}
+
+thead tr {
+  background-color : rgba(0, 0, 0, 0.2)
 }
 
 input {
@@ -24,4 +39,12 @@ input[type=number] {
 
 body > * {
   margin : 10px
+}
+
+table input[type=text] {
+  border-width: 0 0 1px 0;
+}
+
+table input[type=text]::placeholder {
+  color: blue;
 }

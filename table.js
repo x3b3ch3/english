@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // xhttp.open('GET', 'verbs.json', true);
   // xhttp.send();
 
-  this.table = document.querySelector('table');
+  this.table = document.querySelector('tbody');
   for (const row of verbs.slice(from, to).sort(() => Math.random() - 0.5)) {
     const rowEl = document.createElement('tr');
     this.table.appendChild(rowEl);
@@ -122,9 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const randomCell = Math.floor(Math.random()*4);
     for (const cell of row) {
       const cellEl = document.createElement('td');
-      if (cellIdx === randomCell)
+      if (cellIdx === randomCell) {
         cellEl.innerHTML = cell
-      else {
+      } else {
         const input = document.createElement('input');
         input.type = 'text';
         input.placeholder = 'tape ta réponse';
@@ -137,10 +137,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelector('.correct').onclick = function() {
-    for (const textInput of [...table.querySelectorAll('input')]) {
+    const cellInputs = [...table.querySelectorAll('input')];
+    let good = 0;
+    for (const textInput of cellInputs) {
+      if (textInput.value) {
+        if (textInput.value === textInput.dataset.reponse) {
+          textInput.style.backgroundColor = 'lightgreen';
+          good += 1;
+        } else
+          textInput.style.backgroundColor = 'lightcoral';
+      } 
       const color = textInput.value === textInput.dataset.reponse ? 'lightgreen' : 'lightcoral';
-      textInput.style.backgroundColor = color;
     }
+    const score = good/cellInputs.length;
+    let appreciation = '';
+    if (score < .4) {
+      appreciation = 'Oups, Trop d\'erreur. Tu peux facilement faire mieux';
+    } else if (score < .7) {
+      appreciation = 'Hum, encore un peu de travail, essaies encore';
+    } else if (score < 1) {
+      appreciation = 'Presque parfait, bravo';
+    } else {
+      appreciation = 'Parfait, tu as fait un sans faute';
+    }
+    document.querySelector('.score').innerHTML = `Ton résultat : ${good}/${cellInputs.length}, ${appreciation}`;
   }
 
   document.querySelector('.restart').onclick = function() {
