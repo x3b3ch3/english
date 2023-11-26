@@ -43,8 +43,9 @@ body > * {
 
 table input[type=text] {
   border-width: 0 0 1px 0;
+  width: 100px;
 }
 
 table input[type=text]::placeholder {
-  color: blue;
+  color: #44C;
 }
