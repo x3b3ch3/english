@@ -4,17 +4,22 @@ body {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-collapse : collapse;
+  border-spacing : 0;
 }
 
 td {
   border : 1px solid grey;
-  padding: 10px;
+  padding : 10px;
+  background-color : ghostwhite;
 }
 
 input {
-  border: 1px solid grey;
+  border : 1px solid grey;
+}
+
+input[type=number] {
+  width : 40px;
 }
 
 body > * {
