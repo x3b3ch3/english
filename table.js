@@ -114,10 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // xhttp.open('GET', 'verbs.json', true);
   // xhttp.send();
 
-  this.table = document.querySelector('tbody');
   for (const row of verbs.slice(from, to).sort(() => Math.random() - 0.5)) {
     const rowEl = document.createElement('tr');
-    this.table.appendChild(rowEl);
+    document.querySelector('tbody').appendChild(rowEl);
     let cellIdx = 0;
     const randomCell = Math.floor(Math.random()*4);
     for (const cell of row) {
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelector('.correct').onclick = function() {
-    const cellInputs = [...table.querySelectorAll('input')];
+    const cellInputs = document.querySelectorAll('tbody input');
     let good = 0;
     for (const textInput of cellInputs) {
       if (textInput.value) {
