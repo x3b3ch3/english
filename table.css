@@ -1,6 +1,6 @@
 body {
   font-family : 'Helvetica','Arial',sans-serif;
-/*  color : gray;*/
+  font-size : 10pt;
 }
 
 table {
@@ -31,6 +31,8 @@ thead tr {
 
 input {
   border : 1px solid grey;
+  padding: 3px 10px;
+  border-radius: 10px;
 }
 
 input[type=number] {
@@ -44,8 +46,16 @@ body > * {
 table input[type=text] {
   border-width: 0 0 1px 0;
   width: 100px;
+  padding: 3px 10px;
 }
 
 table input[type=text]::placeholder {
   color: #44C;
+}
+
+table span.word {
+  color : white;
+  background : darkkhaki;
+  border-radius: 10px;
+  padding : 3px 10px;
 }

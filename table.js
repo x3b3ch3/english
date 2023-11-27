@@ -88,7 +88,7 @@ function creatTable(from, to) {
     for (const cell of row) {
       const cellEl = document.createElement('td');
       if (cellIdx === randomCell) {
-        cellEl.innerHTML = cell
+        cellEl.innerHTML = `<span class='word'>${cell}</span>`
       } else {
         const input = document.createElement('input');
         input.type = 'text';
