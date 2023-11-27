@@ -1,6 +1,7 @@
 body {
   font-family : 'Helvetica','Arial',sans-serif;
-  font-size : 10pt;
+  font-size : 14px;
+  color: darkergray;
 }
 
 table {
@@ -14,19 +15,20 @@ td {
 }
 
 tbody tr:nth-child(even) {
-  background-color : rgba(0, 0, 0, 0.02)
+  background-color : rgba(0, 0, 0, 0.03)
 }
 
 tbody tr:nth-child(odd) {
-  background-color : rgba(0, 0, 0, 0.04)
+  background-color : rgba(0, 0, 0, 0.08)
 }
 
 tbody tr {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #ddd;
 }
 
 thead tr {
-  background-color : rgba(0, 0, 0, 0.2)
+  background-color : rgba(0, 0, 0, 0.2);
+  color: black;
 }
 
 input {

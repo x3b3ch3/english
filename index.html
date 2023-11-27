@@ -9,11 +9,13 @@
   <link rel="icon" href="favicon.svg" sizes="32x32" id="favicon">
 </head>
 <body>
-  <label>Verbes irréguliers de</label>
-  <input type="number" class="from" min="0" max="79">
-  <label>à</label>
-  <input type="number" class="to" min="1" max="80">
-  <input type="submit" class="restart" value="recommencer">
+  <div>
+    <label>Verbes irréguliers de</label>
+    <input type="number" class="from" min="0" max="79">
+    <label>à</label>
+    <input type="number" class="to" min="1" max="80">
+    <input type="submit" class="restart" value="recommencer">
+  </div>
   <table>
     <thead>
       <td>base verbale</td>
@@ -23,7 +25,9 @@
     </thead>
     <tbody></tbody>
   </table>
-  <input type="submit" class="correct" value="corriger">
-  <span class="score"></span>
+  <div>
+    <input type="submit" class="correct" value="corriger">
+    <span class="score"></span>
+  </div>
 </body>
 </html>
