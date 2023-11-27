@@ -92,7 +92,7 @@ function creatTable(from, to) {
       } else {
         const input = document.createElement('input');
         input.type = 'text';
-        input.placeholder = 'tape ta réponse';
+        input.placeholder = '???';
         input.dataset.reponse = cell.toLowerCase().hashCode();
         cellEl.appendChild(input);
       }
