@@ -1,21 +1,19 @@
-document.addEventListener('DOMContentLoaded', onDOMLoaded.bind(this));
+document.addEventListener('DOMContentLoaded', onDOMLoaded);
 
 function onDOMLoaded() {
   const xhttp = new XMLHttpRequest();
   xhttp.responseType = 'json';
-  xhttp.onreadystatechange = onXhttpLoaded.bind(this);
+  xhttp.onreadystatechange = onXhttpLoaded;
   xhttp.open('GET', 'verbs.json', true);
   xhttp.send();
   
-  
   document.querySelector('.correct').onclick = onCorrectClick;
   document.querySelector('.restart').onclick = onRestartClick;
-
 }
 
 function onXhttpLoaded(event) {
   if (event.target.readyState == 4 && event.target.status == 200) {
-    this.verbs = event.target.response;
+    window.verbs = event.target.response;
     const {from, to} = getParams();
     creatTable(from, to);
   }
@@ -80,7 +78,7 @@ function creatTable(from, to) {
   tbody.innerHTML = '';
   document.querySelector('.score').innerHTML = '';
 
-  for (const row of this.verbs.slice(from, to).sort(() => Math.random() - 0.5)) {
+  for (const row of window.verbs.slice(from, to).sort(() => Math.random() - 0.5)) {
     const rowEl = document.createElement('tr');
     tbody.appendChild(rowEl);
     let cellIdx = 0;
@@ -92,7 +90,7 @@ function creatTable(from, to) {
       } else {
         const input = document.createElement('input');
         input.type = 'text';
-        input.placeholder = '???';
+        input.placeholder = 'Ta réponse?';
         input.dataset.reponse = cell.toLowerCase().hashCode();
         cellEl.appendChild(input);
       }
