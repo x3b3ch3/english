@@ -24,7 +24,10 @@ function onCorrectClick() {
   let good = 0;
   for (const textInput of cellInputs) {
     if (textInput.value) {
-      if (textInput.value.toLowerCase().hashCode() == textInput.dataset.reponse) {
+      const values = textInput.value.toLowerCase().trim().split(', ').map(v => v.hashCode());
+      if (values.reduce((prev,curr)=> {
+        return textInput.reponses.includes(curr) && prev;
+      }, true)) {
         textInput.style.backgroundColor = 'lightgreen';
         good += 1;
       } else
@@ -91,7 +94,7 @@ function creatTable(from, to) {
         const input = document.createElement('input');
         input.type = 'text';
         input.placeholder = 'Ta réponse?';
-        input.dataset.reponse = cell.toLowerCase().hashCode();
+        input.reponses = cell.toLowerCase().split(', ').map(t => t.hashCode());
         cellEl.appendChild(input);
       }
       rowEl.appendChild(cellEl);
