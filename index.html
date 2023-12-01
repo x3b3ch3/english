@@ -6,28 +6,33 @@
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=.8">
   <title>Verbes irréguliers</title>
-  <script type="text/javascript" src="table.js"></script>
-  <link href="table.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="dist/js/shared.js"></script>
+  <link href="dist/css/shared.css" rel="stylesheet" />
   <link rel="icon" href="favicon.svg" sizes="32x32" id="favicon">
 </head>
 <body>
-  <div>
-    <label>Verbes irréguliers de</label>
-    <input type="number" class="from" min="0" max="79">
-    <label>à</label>
-    <input type="number" class="to" min="1" max="80">
-    <input type="submit" class="restart" value="recommencer">
-  </div>
-  <table>
-    <thead>
-      <td>base verbale</td>
-      <td>prétérit</td>
-      <td>participe passé</td>
-      <td>traduction</td>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <input type="submit" class="correct" value="corriger">
-  <div class="score"></div>
+  <form>
+    <div>
+      <label>Verbes irréguliers de</label>
+      <input type="number" class="from" min="0" max="115">
+      <label>à</label>
+      <input type="number" class="to" min="1" max="116">
+      <input type="submit" class="restart" value="recommencer">
+    </div>
+  </form>
+  <form>
+    <table>
+      <thead>
+        <td>base verbale</td>
+        <td>prétérit</td>
+        <td>participe passé</td>
+        <td>traduction</td>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <input type="submit" class="correct" value="corriger">
+    <div class="score"></div>
+  </form>
 </body>
 </html>

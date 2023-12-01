@@ -1,0 +1,58 @@
+body {
+  font-family: "Helvetica", "Arial", sans-serif;
+  color: darkslategray;
+}
+
+form > * {
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table input[type=text] {
+  border-width: 0 0 1px 0;
+  width: 85px;
+  padding: 3px 10px;
+}
+table input[type=text]::placeholder {
+  color: #44C;
+}
+table input[type=text].right {
+  background-color: lightgreen;
+}
+table input[type=text].wrong {
+  background-color: lightcoral;
+}
+table thead tr {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}
+table td {
+  padding: 10px;
+}
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+table span.word {
+  color: white;
+  background: darkkhaki;
+  border-radius: 10px;
+  padding: 3px 10px;
+}
+
+input {
+  border: 1px solid grey;
+  padding: 3px 6px;
+  border-radius: 10px;
+}
+input[type=number] {
+  width: 40px;
+}

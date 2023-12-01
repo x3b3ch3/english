@@ -1,0 +1,55 @@
+body
+  font-family          : 'Helvetica','Arial', sans-serif
+  color                : darkslategray
+
+form  > * 
+  margin               : 10px
+
+table
+  border-collapse      : collapse
+  border-spacing       : 0
+
+  input[type=text] 
+    border-width       : 0 0 1px 0
+    width              : 85px
+    padding            : 3px 10px
+
+    &::placeholder 
+      color            : #44C
+
+    &.right
+      background-color : lightgreen
+
+    &.wrong
+      background-color : lightcoral
+
+  thead tr 
+    background-color   : rgba(0, 0, 0, 0.2)
+    color              : black
+
+  td
+    padding            : 10px
+
+  tbody tr
+    border-bottom      : 1px solid #ddd
+
+    &:nth-child(even)
+      background-color : rgba(0, 0, 0, 0.03)
+
+    &:nth-child(odd)
+      background-color : rgba(0, 0, 0, 0.08)
+
+  span.word 
+    color              : white
+    background         : darkkhaki
+    border-radius      : 10px
+    padding            : 3px 10px
+
+
+input 
+  border               : 1px solid grey
+  padding              : 3px 6px
+  border-radius        : 10px
+
+  &[type=number] 
+    width              : 40px
