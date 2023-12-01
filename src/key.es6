@@ -1,0 +1,1 @@
+window.secretKey = 'secret key @ 2023!';

@@ -87,7 +87,7 @@ function creatTable(from, to) {
     for (const cell of row) {
       const cellEl = document.createElement('td');
       if (cellIdx === randomCell) {
-        cellEl.innerHTML = `<span class='word'>${cell.decrypt().toString()}</span>`
+        cellEl.innerHTML = `<span class='word'>${cell.decrypt().join(', ')}</span>`
       } else {
         const input = document.createElement('input');
         input.type = 'text';
@@ -102,7 +102,7 @@ function creatTable(from, to) {
 }
 
 String.prototype.decrypt = function() {
-  return CryptoJS.AES.decrypt(this, 'secret key 123').toString(CryptoJS.enc.Utf8);
+  return CryptoJS.AES.decrypt(this, window.secretKey).toString(CryptoJS.enc.Utf8);
 }
 
 Array.prototype.decrypt = function() {

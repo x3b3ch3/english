@@ -1,55 +1,77 @@
-body
-  font-family          : 'Helvetica','Arial', sans-serif
-  color                : darkslategray
+$border-radius                   : 12px
 
-form  > * 
-  margin               : 10px
+body
+  font-family                    : 'Helvetica','Arial', sans-serif
+  color                          : lightgrey
+  background-color               : darkslategray
+  font-size                      : .8em
+
+form 
+  margin                         : 0 calc(50% - 250px)
+  > * 
+    margin                       : 10px
 
 table
-  border-collapse      : collapse
-  border-spacing       : 0
+  border-collapse                : separate
+  border-spacing                 : 0
 
   input[type=text] 
-    border-width       : 0 0 1px 0
-    width              : 85px
-    padding            : 3px 10px
+    border-width                 : 0 0 1px 0
+    width                        : 85px
+    padding                      : 3px 10px
 
     &::placeholder 
-      color            : #44C
+      color                      : #44C
 
     &.right
-      background-color : lightgreen
+      background-color           : lightgreen
 
     &.wrong
-      background-color : lightcoral
+      background-color           : lightcoral
 
   thead tr 
-    background-color   : rgba(0, 0, 0, 0.2)
-    color              : black
+    color                        : black
+
+    td
+      background-color           : rgba(255, 255, 255, 0.5)
+
+      &:first-child 
+        border-top-left-radius   : $border-radius
+      &:last-child
+        border-top-right-radius  : $border-radius
 
   td
-    padding            : 10px
+    padding                      : 10px
 
   tbody tr
-    border-bottom      : 1px solid #ddd
+    &:not(:nth-last-child)
+      border-bottom              : 1px solid #ddd
 
-    &:nth-child(even)
-      background-color : rgba(0, 0, 0, 0.03)
+    &:nth-child(even) td
+      background-color           : rgba(255, 255, 255, 0.75)
 
-    &:nth-child(odd)
-      background-color : rgba(0, 0, 0, 0.08)
+    &:nth-child(odd) td
+      background-color           : rgba(255, 255, 255, 0.85)
+
+
+    &:last-child td:first-child 
+      border-bottom-left-radius  : $border-radius
+
+    &:last-child td:last-child
+      border-bottom-right-radius : $border-radius
 
   span.word 
-    color              : white
-    background         : darkkhaki
-    border-radius      : 10px
-    padding            : 3px 10px
+    color                        : white
+    background                   : darkkhaki
+    border-radius                : $border-radius
+    padding                      : 3px 10px
+    white-space                  : nowrap
 
 
 input 
-  border               : 1px solid grey
-  padding              : 3px 6px
-  border-radius        : 10px
+  border                         : 1px solid grey
+  padding                        : 3px 6px
+  border-radius                  : $border-radius
 
   &[type=number] 
-    width              : 40px
+    width                        : 40px
